@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercício</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: blueviolet;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+        }
+        #container {
+            width: 400px;
+            height: 200px;
+            background-color: #DCDCDC;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        #container p {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        #inseridos {
+            width: 360px;
+            height: 100px;
+            background-color: #FFF;
+            border-radius: 4px;
+            padding: 10px;
+        }
+        #inseridos p {
+            font-size: 12px;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <p>Estudos iniciais com JavaScript</p>
+        <div id="inseridos"></div>
+    </div>
+    <script>
+        // mostra uma janela no inicio do arquivo 
+        window.alert('Primeiro teste!');
+
+        var variavel = 'JavaScript'
+
+        // O operador "+" tem a função de concatenação quando utilizado com string
+        window.alert('Estudos com ' + variavel)
+
+        // Recebe uma string e armazena na variável nome
+        var nome = window.prompt('Insira seu nome');
+
+        // Apresenta a variável nome em um Template String
+        window.alert(`Bem vindo, ${nome}!`)
+
+        /* Retorna um template string com a variável e um atributo
+        que mede a quantidade de caracteres. */
+        window.alert(`Seu nome possui ${nome.length} letras.`)
+
+        /* Retorna um template string que informa o tipo de dado armazenado
+        na variável nome. */
+        window.alert(`Seu nome foi armazenado em uma variável do tipo ${typeof(nome)}`)
+
+        // Recebe um número na variável n1 e n2
+        var n1 = Number(window.prompt('Digite um número '))
+        var n2 = Number(window.prompt('Digite outro número '))
+        /* Podemos utilizar Number() para fazer a conversão do número,
+        tanto para número inteiro, quanto para número real(com vírgula).
+            Ou seja, o próprio Number() vai definir como vai tratar o tipo
+        de variável, seja int ou float */
+
+        // O operador "+" tem a função de adição quando utilizado com números   
+        var soma = n1 + n2
+
+        // Apresenta o resultado em um template string
+        window.alert(`A soma dos dois valores é equivalente a ${soma}`)
+
+        /* Faz a conexão com o documento html e seleciona o objeto "#inseridos" 
+        como rota de inserção */
+        const $container = document.querySelector("#inseridos");
+
+        // Recebe a variável nome em um template string e armazena em nomeImpresso
+        const nomeImpresso = `<p>Bem vindo ${nome}</p>`
+
+        const tamanhoNome = `<p>Seu nome possui ${nome.length} letras.</p>`
+
+        const armazenaNome = `<p>Informação armazenada em uma variável do tipo ${typeof(nome)}</p>`
+
+        /* Insere a constante nomeImpresso no documento html dentro de
+        $container (específicamente dentro de #inseridos) ao fim do conteúdo que já está lá */
+        $container.insertAdjacentHTML("beforeend", nomeImpresso)
+
+        $container.insertAdjacentHTML("beforeend", tamanhoNome)
+
+        $container.insertAdjacentHTML("beforeend", armazenaNome)
+    </script>
+</body>
+</html>
